@@ -19,7 +19,7 @@ const DefaultSts: StrictTransportSecurity = {
  *
  * @example
  * ```ts
- * import { hstsHeader } from "https://deno.land/x/hsts_middleware@$VERSION/mod.ts";
+ * import { hsts } from "https://deno.land/x/hsts_middleware@$VERSION/mod.ts";
  * import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
  *
  * declare const request: Request;
@@ -32,8 +32,8 @@ const DefaultSts: StrictTransportSecurity = {
  * assertEquals(
  *   response.headers.get(
  *     "strict-transport-security",
- *     "max-age=15552000; includeSubDomains",
  *   ),
+ *   "max-age=15552000; includeSubDomains",
  * );
  * ```
  *
