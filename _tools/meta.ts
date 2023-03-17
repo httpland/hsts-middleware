@@ -38,4 +38,14 @@ export const makeOptions = (version: string): BuildOptions => ({
     },
   },
   packageManager: "pnpm",
+  mappings: {
+    "https://deno.land/x/http_middleware@1.0.0/mod.ts": {
+      name: "@httpland/http-middleware",
+      version: "1.0.0",
+    },
+    "https://deno.land/x/hsts_parser@1.0.0-beta.1/mod.ts": {
+      name: "@httpland/hsts-parser",
+      version: "1.0.0-beta.1",
+    },
+  },
 });
