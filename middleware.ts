@@ -1,8 +1,12 @@
 // Copyright 2023-latest the httpland authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { type Middleware, SecurityHeaders } from "./deps.ts";
-import { StrictTransportSecurity, stringify } from "./sts.ts";
+import {
+  type Middleware,
+  SecurityHeaders,
+  type StrictTransportSecurity,
+  stringify,
+} from "./deps.ts";
 
 /**
  * @example

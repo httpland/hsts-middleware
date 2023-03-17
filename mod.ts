@@ -2,5 +2,4 @@
 // This module is browser compatible.
 
 export { hsts } from "./middleware.ts";
-export { type StrictTransportSecurity } from "./sts.ts";
-export { type Middleware } from "./deps.ts";
+export { type Middleware, type StrictTransportSecurity } from "./deps.ts";
