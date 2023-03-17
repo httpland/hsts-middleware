@@ -9,7 +9,7 @@
 [![test](https://github.com/httpland/hsts-middleware/actions/workflows/test.yaml/badge.svg)](https://github.com/httpland/hsts-middleware/actions/workflows/test.yaml)
 [![NPM](https://nodei.co/npm/@httpland/hsts-middleware.png?mini=true)](https://nodei.co/npm/@httpland/hsts-middleware/)
 
-HTTP Strict TransportSecurity middleware.
+HTTP Strict Transport Security middleware.
 
 Compliant with
 [RFC 6797, HTTP Strict Transport Security (HSTS)](https://www.rfc-editor.org/rfc/rfc6797).
