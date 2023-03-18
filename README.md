@@ -3,16 +3,16 @@
 [![deno land](http://img.shields.io/badge/available%20on-deno.land/x-lightgrey.svg?logo=deno)](https://deno.land/x/hsts_middleware)
 [![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/deno.land/x/hsts_middleware/mod.ts)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/httpland/hsts-middleware)](https://github.com/httpland/hsts-middleware/releases)
-[![codecov](https://codecov.io/github/httpland/hsts-middleware/branch/main/graph/badge.svg?token=MNFZEQH8OK)](https://codecov.io/gh/httpland/hsts-middleware)
+[![codecov](https://codecov.io/gh/httpland/hsts-middleware/branch/main/graph/badge.svg?token=ERELj74qaQ)](https://codecov.io/gh/httpland/hsts-middleware)
 [![GitHub](https://img.shields.io/github/license/httpland/hsts-middleware)](https://github.com/httpland/hsts-middleware/blob/main/LICENSE)
 
 [![test](https://github.com/httpland/hsts-middleware/actions/workflows/test.yaml/badge.svg)](https://github.com/httpland/hsts-middleware/actions/workflows/test.yaml)
 [![NPM](https://nodei.co/npm/@httpland/hsts-middleware.png?mini=true)](https://nodei.co/npm/@httpland/hsts-middleware/)
 
-HTTP Strict Transport Security middleware.
+HTTP Strict Transport Security(HSTS) middleware.
 
 Compliant with
-[RFC 6797, HTTP Strict Transport Security (HSTS)](https://www.rfc-editor.org/rfc/rfc6797).
+[RFC 6797, HTTP Strict Transport Security(HSTS)](https://www.rfc-editor.org/rfc/rfc6797).
 
 ## Middleware
 
@@ -37,8 +37,8 @@ const response = await middleware(
 assertEquals(
   response.headers.get(
     "strict-transport-security",
-    "max-age=15552000; includeSubDomains",
   ),
+  "max-age=15552000; includeSubDomains",
 );
 ```
 
@@ -48,7 +48,7 @@ Default is to add the following header to the response.
 Strict-Transport-Security: max-age=15552000; includeSubDomains
 ```
 
-## StrictTransportSecurity
+## Strict Transport Security
 
 `StrictTransportSecurity` is a structured object of the
 `Strict-Transport-Security` Header.
@@ -84,7 +84,7 @@ Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 
 ## Throwing error
 
-[StrictTransportSecurity](#stricttransportsecurity) is an invalid value, it
+[Strict Transport Security](#strict-transport-security) is an invalid value, it
 throws `TypeError`.
 
 An invalid value is obtained in the following cases:
@@ -96,6 +96,25 @@ import { hsts } from "https://deno.land/x/hsts_middleware@$VERSION/mod.ts";
 import { assertThrows } from "https://deno.land/std/testing/asserts.ts";
 
 assertThrows(() => hsts({ maxAge: NaN }));
+```
+
+## Preset
+
+STS presets are provided. It is value recommended by several hosts.
+
+- [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html)
+- [mozilla](https://infosec.mozilla.org/guidelines/web_security#http-strict-transport-security)
+
+```ts
+import { hsts, STS } from "https://deno.land/x/hsts_middleware@$VERSION/mod.ts";
+
+const middleware = hsts(STS);
+```
+
+yield:
+
+```http
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 ```
 
 ## Effects
@@ -110,6 +129,11 @@ Middleware may make changes to the following elements of the HTTP message.
 Middleware is executed if all of the following conditions are met
 
 - `Strict-Transport-Security` header does not exists in response
+
+## API
+
+All APIs can be found in the
+[deno doc](https://doc.deno.land/https/deno.land/x/hsts_middleware/mod.ts).
 
 ## License
 
