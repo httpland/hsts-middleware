@@ -130,6 +130,11 @@ Middleware is executed if all of the following conditions are met
 
 - `Strict-Transport-Security` header does not exists in response
 
+## API
+
+All APIs can be found in the
+[deno doc](https://doc.deno.land/https/deno.land/x/hsts_middleware/mod.ts).
+
 ## License
 
 Copyright © 2023-present [httpland](https://github.com/httpland).
