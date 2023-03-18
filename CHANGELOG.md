@@ -1,3 +1,10 @@
+# [1.0.0-beta.3](https://github.com/httpland/hsts-middleware/compare/1.0.0-beta.2...1.0.0-beta.3) (2023-03-18)
+
+
+### Features
+
+* **mod:** export related types ([30de550](https://github.com/httpland/hsts-middleware/commit/30de55028cf46e349e40cc0e71a5ab773f6f1640))
+
 # [1.0.0-beta.2](https://github.com/httpland/hsts-middleware/compare/1.0.0-beta.1...1.0.0-beta.2) (2023-03-18)
 
 
