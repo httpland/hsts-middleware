@@ -3,3 +3,4 @@
 
 export { hsts } from "./middleware.ts";
 export { type Middleware, type StrictTransportSecurity } from "./deps.ts";
+export { STS } from "./utils.ts";

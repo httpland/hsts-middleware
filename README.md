@@ -3,7 +3,7 @@
 [![deno land](http://img.shields.io/badge/available%20on-deno.land/x-lightgrey.svg?logo=deno)](https://deno.land/x/hsts_middleware)
 [![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/deno.land/x/hsts_middleware/mod.ts)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/httpland/hsts-middleware)](https://github.com/httpland/hsts-middleware/releases)
-[![codecov](https://codecov.io/github/httpland/hsts-middleware/branch/main/graph/badge.svg)](https://codecov.io/gh/httpland/hsts-middleware)
+[![codecov](https://codecov.io/gh/httpland/hsts-middleware/branch/main/graph/badge.svg?token=ERELj74qaQ)](https://codecov.io/gh/httpland/hsts-middleware)
 [![GitHub](https://img.shields.io/github/license/httpland/hsts-middleware)](https://github.com/httpland/hsts-middleware/blob/main/LICENSE)
 
 [![test](https://github.com/httpland/hsts-middleware/actions/workflows/test.yaml/badge.svg)](https://github.com/httpland/hsts-middleware/actions/workflows/test.yaml)
@@ -96,6 +96,25 @@ import { hsts } from "https://deno.land/x/hsts_middleware@$VERSION/mod.ts";
 import { assertThrows } from "https://deno.land/std/testing/asserts.ts";
 
 assertThrows(() => hsts({ maxAge: NaN }));
+```
+
+## Preset
+
+STS presets are provided. It is value recommended by several hosts.
+
+- [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html)
+- [mozilla](https://infosec.mozilla.org/guidelines/web_security#http-strict-transport-security)
+
+```ts
+import { hsts, STS } from "https://deno.land/x/hsts_middleware@$VERSION/mod.ts";
+
+const middleware = hsts(STS);
+```
+
+yield:
+
+```http
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 ```
 
 ## Effects
