@@ -1,3 +1,10 @@
+# [1.0.0-beta.2](https://github.com/httpland/hsts-middleware/compare/1.0.0-beta.1...1.0.0-beta.2) (2023-03-18)
+
+
+### Features
+
+* **utils:** add preset for recommended sts value ([c63de41](https://github.com/httpland/hsts-middleware/commit/c63de419cc40bc38b9d59e8861c3540b1ca12f2e))
+
 # 1.0.0-beta.1 (2023-03-17)
 
 
