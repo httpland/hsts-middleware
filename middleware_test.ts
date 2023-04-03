@@ -1,4 +1,4 @@
-import { hsts, withSts } from "./middleware.ts";
+import { hsts } from "./middleware.ts";
 import {
   assert,
   assertThrows,
@@ -57,19 +57,5 @@ describe("hsts", () => {
 
   it("should throw error if the sts is invalid", () => {
     assertThrows(() => hsts({ maxAge: NaN }));
-  });
-});
-
-describe("withSts", () => {
-  it("should add sts header", async () => {
-    assert(
-      await equalsResponse(
-        withSts(new Response(), "max-age=100"),
-        new Response(null, {
-          headers: { "strict-transport-security": "max-age=100" },
-        }),
-        true,
-      ),
-    );
   });
 });

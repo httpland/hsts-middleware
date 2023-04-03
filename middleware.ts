@@ -6,6 +6,7 @@ import {
   SecurityHeaders,
   type StrictTransportSecurity,
   stringify,
+  withHeader,
 } from "./deps.ts";
 
 /**
@@ -52,16 +53,14 @@ export function hsts(
   return async (request, next) => {
     const response = await next(request);
 
-    return withSts(response, stsValue);
+    if (response.headers.has(SecurityHeaders.StrictTransportSecurity)) {
+      return response;
+    }
+
+    return withHeader(
+      response,
+      SecurityHeaders.StrictTransportSecurity,
+      stsValue,
+    );
   };
-}
-
-export function withSts(response: Response, fieldValue: string): Response {
-  response = response.clone();
-
-  if (!response.headers.has(SecurityHeaders.StrictTransportSecurity)) {
-    response.headers.set(SecurityHeaders.StrictTransportSecurity, fieldValue);
-  }
-
-  return response;
 }

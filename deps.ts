@@ -9,6 +9,7 @@ export {
   type StrictTransportSecurity,
   stringify,
 } from "https://deno.land/x/hsts_parser@1.0.0-beta.1/mod.ts";
+export { withHeader } from "https://deno.land/x/http_utils@1.0.0/message.ts";
 
 export const enum SecurityHeaders {
   StrictTransportSecurity = "strict-transport-security",
