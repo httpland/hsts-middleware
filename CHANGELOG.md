@@ -1,3 +1,10 @@
+## [1.0.1-beta.1](https://github.com/httpland/hsts-middleware/compare/1.0.0...1.0.1-beta.1) (2023-04-03)
+
+
+### Bug Fixes
+
+* **middleware:** remove unsafe clone ([761098d](https://github.com/httpland/hsts-middleware/commit/761098dab3e187ca3312c07e095dd10200665bf1))
+
 # 1.0.0 (2023-03-18)
 
 

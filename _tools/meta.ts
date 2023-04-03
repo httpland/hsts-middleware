@@ -47,5 +47,10 @@ export const makeOptions = (version: string): BuildOptions => ({
       name: "@httpland/hsts-parser",
       version: "1.0.0-beta.1",
     },
+    "https://deno.land/x/http_utils@1.0.0/message.ts": {
+      name: "@httpland/http-utils",
+      version: "1.0.0",
+      subPath: "message.js",
+    },
   },
 });
